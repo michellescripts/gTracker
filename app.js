@@ -7,15 +7,11 @@ const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
 app.use(bodyParser.urlencoded({
-    extended: false
+  extended: false
 }))
 app.use(bodyParser.json())
-app.use(bodyParser.static('public'))
-
-
-
-
+app.use('/', express.static('public'))
 
 app.listen(port, () => {
-  console.log(`listening on ${port}`);
+  console.log(`listening on ${port}`)
 })
