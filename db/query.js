@@ -8,14 +8,14 @@ function getInst () {
   return pg('instructor').select()
 }
 
-function getCohortInst(obj){
+function getCohortInst (obj) {
   return pg.from('cohort_instructor')
-  .innerJoin('instructor', 'instructor.id', 'cohort_instructor.instructor_id').innerJoin('cohort', 'cohort.id','cohort_instructor.cohort_id').select().where('instructor.id', obj)
+  .innerJoin('instructor', 'instructor.id', 'cohort_instructor.instructor_id').innerJoin('cohort', 'cohort.id', 'cohort_instructor.cohort_id').select().where('instructor.id', obj)
 }
 
-function getCohort(obj){
+function getCohort (obj) {
   return pg.from('cohort_instructor')
-  .innerJoin('instructor', 'instructor.id', 'cohort_instructor.instructor_id').innerJoin('cohort', 'cohort.id','cohort_instructor.cohort_id').select().where('cohort.id', obj)
+  .innerJoin('instructor', 'instructor.id', 'cohort_instructor.instructor_id').innerJoin('cohort', 'cohort.id', 'cohort_instructor.cohort_id').select().where('cohort_instructor.cohort_id', obj)
 }
 
 module.exports = {
