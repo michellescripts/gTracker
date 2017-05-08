@@ -34,13 +34,13 @@ app.post('/instructor', (req, res) => {
 })
 
 app.post('/cohort', (req, res) => {
-  console.log('id:')
-  console.log(req.body.id)
   query.getCohort(req.body.id)
   .then(function (data) {
-    console.log('data:')
-    console.log(data)
-    res.render('cohort', {data})
+    if (!data[0]) {
+      res.send('No data for cohort')
+    } else {
+      res.render('cohort', {data})
+    }
   })
 })
 
