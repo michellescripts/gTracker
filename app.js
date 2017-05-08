@@ -4,6 +4,7 @@ const query = require('./db/query')
 const bodyParser = require('body-parser')
 const pg = require('./db/knex')
 const hbs = require('hbs')
+const methodOverride = require('method-override')
 const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 app.use('/', express.static('public'))
+app.use(methodOverride('_method'))
 
 app.get('/', function (req, res) {
   var cohort
