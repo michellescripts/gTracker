@@ -11,9 +11,9 @@
     </header>
 <label for="cohort">Search by Cohort Number</label>
     <form class="" action="/cohort" method="post">
-      <select class="" name="cohortNumber">
+      <select class="" name="id">
       {{#each cohort}}
-        <option value="">{{this.cohortNumber}}</option>
+        <option value="{{this.id}}">{{this.cohortNumber}}</option>
       {{/each}}
       </select>
       <button>Search Cohort</button>

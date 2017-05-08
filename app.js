@@ -19,7 +19,6 @@ app.get('/', function (req, res) {
     cohort = ret
     return pg('instructor').select()
   }).then(function (instructor) {
-    console.log(instructor);
     res.render('index', {
       instructor: instructor,
       cohort: cohort
@@ -30,8 +29,15 @@ app.get('/', function (req, res) {
 app.post('/instructor', (req,res) => {
   query.getCohortInst(req.body.id)
   .then(function(data) {
-    console.log(data);
     res.render('data', {data})
+  })
+})
+
+app.post('/cohort', (req,res) => {
+  query.getCohort(req.body.id)
+  .then(function(data) {
+    console.log(data);
+    res.render('cohort', {data})
   })
 })
 

@@ -8,15 +8,15 @@
     {{#each data}}
     {{#if @first}}
       <a href="/">HOME</a>
-      <h1>Search Results for Instructor {{this.instFirstName}}</h1>
+      <h1>Search Results for Cohort {{this.cohortNumber}}</h1>
       {{/if}}
 
     <main>
 
-      <h3>Cohort: {{this.cohortNumber}}</h3>
-      <li>Size: {{this.cohortSize}}</li>
+      <h3>Instructor: {{this.instFirstName}} {{this.instLastName}}</h3>
+      <li>Position: {{this.instPosition}}</li>
       <li>Campus: {{this.cohortCampus}}</li>
-      <li>Start Date: {{this.cohortStart}}</li>
+      <li>Start Date: {{this.instStartDate}}</li>
       <br>
       {{/each}}
     </main>
