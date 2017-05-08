@@ -29,7 +29,11 @@ app.get('/', function (req, res) {
 app.post('/instructor', (req, res) => {
   query.getCohortInst(req.body.id)
   .then(function (data) {
-    res.render('data', {data})
+    if (!data[0]) {
+      res.send('No data for cohort')
+    } else {
+      res.render('data', {data})
+    }
   })
 })
 
