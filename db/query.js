@@ -1,9 +1,14 @@
 const pg = require('./knex')
 
-function getData() {
+function getData () {
   return pg('cohort').select()
 }
 
+function getInst () {
+  return pg('instructor').select()
+}
+
 module.exports = {
-  getData
+  getData,
+  getInst
 }

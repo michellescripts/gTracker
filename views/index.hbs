@@ -9,14 +9,26 @@
     <header>
       <h1>Track Instructors</h1>
     </header>
-
+<label for="cohort">Search by Cohort Number</label>
     <form class="" action="/data" method="post">
-
+      <select class="" name="cohortNumber">
+      {{#each cohort}}
+        <option value="">{{this.cohortNumber}}</option>
+      {{/each}}
+      </select>
+      <button>Search Cohort</button>
     </form>
-    
-    {{#each data}}
-      <h2>{{this.cohortNumber}}</h2>
-    {{/each}}
+
+    <label for="cohort">Search by Instructor Name</label>
+        <form class="" action="/data" method="post">
+          <select class="" name="cohortNumber">
+          {{#each instructor}}
+            <option value="">{{this.instFirstName}}</option>
+          {{/each}}
+          </select>
+          <button>Search Instructor</button>
+        </form>
+
 
   </body>
 </html>

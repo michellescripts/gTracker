@@ -13,16 +13,18 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 app.use('/', express.static('public'))
 
-app.get('/', (req, res) => {
-  query.getData()
-  .then(data => {
-    console.log(data);
-    res.render('index', {data})
+app.get('/', function (req, res) {
+  var cohort
+  pg('cohort').select().then(function (ret) {
+    cohort = ret
+    return pg('instructor').select()
+  }).then(function (instructor) {
+    res.render('index', {
+      instructor: instructor,
+      cohort: cohort
+    })
   })
 })
-
-
-
 
 app.listen(port, () => {
   console.log(`listening on ${port}`)
