@@ -1,0 +1,26 @@
+{
+  "name": "gtracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihshhehl/gTracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mihshhehl/gTracker/issues"
+  },
+  "homepage": "https://github.com/mihshhehl/gTracker#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "hbs": "^4.0.1",
+    "knex": "^0.13.0",
+    "pg": "^6.1.5"
+  }
+}
