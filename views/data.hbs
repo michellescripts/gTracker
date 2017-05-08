@@ -5,6 +5,8 @@
     <title>HEY</title>
   </head>
   <body>
-    <h1>data page</h1>
+    {{#each data}}
+      <h1>Search Results for Instructor {{this.instFirstName}}</h1>
+    {{/each}}
   </body>
 </html>

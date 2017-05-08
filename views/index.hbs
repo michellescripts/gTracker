@@ -10,7 +10,7 @@
       <h1>Track Instructors</h1>
     </header>
 <label for="cohort">Search by Cohort Number</label>
-    <form class="" action="/data" method="post">
+    <form class="" action="/cohort" method="post">
       <select class="" name="cohortNumber">
       {{#each cohort}}
         <option value="">{{this.cohortNumber}}</option>
@@ -20,10 +20,10 @@
     </form>
 
     <label for="cohort">Search by Instructor Name</label>
-        <form class="" action="/data" method="post">
-          <select class="" name="cohortNumber">
+        <form class="" action="/instructor" method="post">
+          <select class="" name="id">
           {{#each instructor}}
-            <option value="">{{this.instFirstName}}</option>
+            <option value="{{this.id}}">{{this.instFirstName}}</option>
           {{/each}}
           </select>
           <button>Search Instructor</button>
