@@ -79,6 +79,15 @@ app.post('/addJoin', (req, res) => {
     })
 })
 
+app.delete('/delete', (req, res) => {
+  pg('instructor')
+  .where({
+    id: +req.body.instructor_id
+  }).del().then(() => {
+    res.redirect('/')
+  })
+})
+
 app.listen(port, () => {
   console.log(`listening on ${port}`)
 })

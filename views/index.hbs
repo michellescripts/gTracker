@@ -63,5 +63,15 @@
   <button>Submit</button>
 </form>
 
+<form class="" method="post" action="/delete?_method=DELETE">
+  <select class="" name="instructor_id">
+  {{#each instructor}}
+    <option value="{{this.id}}">{{this.instFirstName}}</option>
+  {{/each}}
+  </select>
+  <button>Remove This Instructor</button>
+
+</form>
+
   </body>
 </html>
