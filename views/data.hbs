@@ -6,7 +6,20 @@
   </head>
   <body>
     {{#each data}}
+    {{#if @first}}
+<a href="/">HOME</a>
       <h1>Search Results for Instructor {{this.instFirstName}}</h1>
-    {{/each}}
+      {{/if}}
+
+
+    <main>
+
+      <h3>Cohort: {{this.cohortNumber}}</h3>
+      <li>Size: {{this.cohortSize}}</li>
+      <li>Campus: {{this.cohortCampus}}</li>
+      <li>Start Date: {{this.cohortStart}}</li>
+      <br>
+      {{/each}}
+    </main>
   </body>
 </html>

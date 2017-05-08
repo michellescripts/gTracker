@@ -1,5 +1,5 @@
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
   return knex('cohort_instructor').del()
     .then(function () {
@@ -10,9 +10,17 @@ exports.seed = function(knex, Promise) {
           instructor_id: 1
         },
         {
+          cohort_id: 2,
+          instructor_id: 1
+        },
+        {
           cohort_id: 1,
           instructor_id: 2
+        },
+        {
+          cohort_id: 2,
+          instructor_id: 2
         }
-      ]);
-    });
-};
+      ])
+    })
+}
