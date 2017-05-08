@@ -88,6 +88,18 @@ app.delete('/delete', (req, res) => {
   })
 })
 
+app.put('/update', (req, res) => {
+  console.log(req.body)
+  req.body.id = +req.body.id
+  req.body.cohortSize = +req.body.cohortSize
+  pg('cohort')
+  .update(req.body)
+  .where({id: req.body.id})
+  .then(() => {
+    res.redirect('/')
+  })
+})
+
 app.listen(port, () => {
   console.log(`listening on ${port}`)
 })

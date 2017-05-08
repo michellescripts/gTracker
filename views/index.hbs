@@ -70,7 +70,22 @@
   {{/each}}
   </select>
   <button>Remove This Instructor</button>
+</form>
 
+
+
+<label for="addCohort">Update Existing Cohort</label>
+<form class=""  method="post" action="/update?_method=PUT">
+  <select class="" name="id">
+  {{#each cohort}}
+    <option value="{{this.id}}">{{this.cohortNumber}}</option>
+  {{/each}}
+  </select>
+  <input type="text" name="cohortCampus" value="" placeholder="Campus">
+  <label for="cohortStart">Start Date:</label><input type="date" name="cohortStart" value="">
+  <label for="cohortEnd">End Date:</label><input type="date" name="cohortEnd" value="">
+  <input type="integer" name="cohortSize" value="" placeholder="Number of Students">
+  <button>Update</button>
 </form>
 
   </body>
