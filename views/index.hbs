@@ -39,5 +39,29 @@
   <button>Submit</button>
 </form>
 
+<label for="addInstructor">Add a New Instructor</label>
+<form class="" action="/addInstructor" method="post">
+  <input type="text" name="instFirstName" value="" placeholder="First Name">
+  <input type="text" name="instLastName" value="" placeholder="Last Name">
+  <input type="text" name="instPosition" value="" placeholder="Position">
+  <label for="startDate">Start Date:</label><input type="date" name="instStartDate" value="">
+  <button>Submit</button>
+</form>
+
+<label for="addJoin">Add instructor to Cohort</label>
+<form class="" action="/addJoin" method="post">
+  <select class="" name="cohort_id">
+  {{#each cohort}}
+    <option value="{{this.id}}">{{this.cohortNumber}}</option>
+  {{/each}}
+  </select>
+  <select class="" name="instructor_id">
+  {{#each instructor}}
+    <option value="{{this.id}}">{{this.instFirstName}}</option>
+  {{/each}}
+  </select>
+  <button>Submit</button>
+</form>
+
   </body>
 </html>

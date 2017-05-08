@@ -50,6 +50,26 @@ app.post('/addCohort', (req, res) => {
         })
 })
 
+app.post('/addInstructor', (req, res) => {
+  console.log(req.body)
+  pg('instructor')
+        .insert(req.body)
+        .then(() => {
+          res.redirect('/')
+        })
+})
+
+app.post('/addJoin', (req, res) => {
+  req.body.cohort_id = +req.body.cohort_id
+  req.body.instructor_id = +req.body.instructor_id
+  console.log(req.body)
+  pg ('cohort_instructor')
+    .insert(req.body)
+    .then(() => {
+      res.redirect('/')
+    })
+})
+
 app.listen(port, () => {
   console.log(`listening on ${port}`)
 })
