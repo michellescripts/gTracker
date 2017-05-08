@@ -26,19 +26,28 @@ app.get('/', function (req, res) {
   })
 })
 
-app.post('/instructor', (req,res) => {
+app.post('/instructor', (req, res) => {
   query.getCohortInst(req.body.id)
-  .then(function(data) {
+  .then(function (data) {
     res.render('data', {data})
   })
 })
 
-app.post('/cohort', (req,res) => {
+app.post('/cohort', (req, res) => {
   query.getCohort(req.body.id)
-  .then(function(data) {
-    console.log(data);
+  .then(function (data) {
+    console.log(data)
     res.render('cohort', {data})
   })
+})
+
+app.post('/addCohort', (req, res) => {
+  console.log(req.body)
+  pg('cohort')
+        .insert(req.body)
+        .then(() => {
+          res.redirect('/')
+        })
 })
 
 app.listen(port, () => {
